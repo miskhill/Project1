@@ -1,5 +1,5 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box; */
 }
 
 header {
@@ -22,13 +22,13 @@ body {
 .grid {
   margin: 50px 0 0 0;
   align-items: center;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: 650px;
-  width: 800px;
+  width: 750px;
   position: relative;
+  background-color: black;
 }
 
 .grid-wrapper {
@@ -43,10 +43,20 @@ body {
   height: 13.5%;
   width: 15%;
   color: red;
+  border: 5px solid black;
+  border-radius: 50%;
+  background-color: white;
+  outline: 5px solid black;
 }
 
 .Buttons {
   display: flex;
   justify-content: space-evenly;
   margin: 50px;
+}
+
+.red {
+}
+
+.yellow {
 }
