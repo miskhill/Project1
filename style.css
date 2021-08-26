@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 header {
@@ -10,12 +10,13 @@ header {
 h1 {
   display: flex;
   color: brown;
+  margin-bottom: 0;
 }
 
 body {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .grid {
@@ -31,6 +32,7 @@ body {
 }
 
 .grid-wrapper {
+  display: flex;
   justify-content: center;
 }
 
@@ -41,4 +43,10 @@ body {
   height: 13.5%;
   width: 15%;
   color: red;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px;
 }
