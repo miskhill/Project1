@@ -7,11 +7,15 @@ function init() {
   const cellCount = width * height
   const cells = []
 
+  const startingPosition = 0
 
-  function createGrid() {
+  //function to create the grid
+  function createGrid(startingPo) {
+    //for loop index  0 --> final cell 
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      // cell.textContent = i
+      cell.textContent = i
+      //just text to see the index can remove later
       cell.id = i
       grid.appendChild(cell)
       cells.push(cell)
@@ -22,7 +26,7 @@ function init() {
 
 
 
-  createGrid()
+  createGrid(startingPosition)
 }
 
 window.addEventListener('DOMContentLoaded', init)
