@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 header {
@@ -47,6 +47,10 @@ body {
   border-radius: 50%;
   background-color: white;
   outline: 5px solid black;
+}
+
+.grid div:hover {
+  background-color: yellow;
 }
 
 .Buttons {
