@@ -53,11 +53,11 @@ body {
   background-color: blue;
 }
 
-.red {
+.grid div.red {
   background-color: red;
 }
 
-.yellow {
+.grid div.yellow {
   background-color: yellow;
 }
 
