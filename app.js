@@ -64,9 +64,9 @@ function init() {
   }
 
 
-  // function to start the game 😁
-  //use event handler
-  function startGame(e){
+  // function for game start 😁
+  //use event handler as argument
+  function gameStart(e){
     
     if (player === players[0]) {
 
@@ -197,7 +197,7 @@ function init() {
       player = players[1]
       
     } else {
-
+      //Player 2 logic - 
       let nextChoice = Number(e.target.id) % width + 36
 
       while (cells[nextChoice].classList.contains('yellow')|| cells[nextChoice].classList.contains('red')) {
@@ -220,7 +220,8 @@ function init() {
       }
       if (player2Choice.length >= 4) {
         playerTwoScore++
-        console.log('Player 2 wins across the board')
+        console.log('Player 2 wins across the board 🔴')
+        console.log('Player 2 score', playerTwoScore)
       }
 
       player2Choice = [nextChoice]
@@ -233,7 +234,7 @@ function init() {
 
         if (player2Choice.length >= 4) {
           playerTwoScore++
-          console.log('Player 2 wins diagonal')
+          console.log('Player 2 wins diagonal 🔴')
         }
       }
 
@@ -248,11 +249,11 @@ function init() {
       index = nextChoice + width + 1
 
       while (index & width !== 0 && index <= width * height - 1 && checkPlayer2(index)) {
-        index += width +1
+        index += width + 1
       }
       if (player2Choice.length >= 4) {
         playerTwoScore++
-        console.log('Player 2 wins diagonal')
+        console.log('Player 2 wins diagonal 🔴')
       }
 
       player2Choice = [nextChoice]
@@ -271,7 +272,7 @@ function init() {
 
       if (player2Choice.length >= 4) {
         playerTwoScore++
-        console.log('Player 2 wins column')
+        console.log('Player 2 wins column 🔴')
       }
 
       player2Choice = []
@@ -285,7 +286,7 @@ function init() {
   
 
   //Events
-  grid.addEventListener('click', startGame)
+  grid.addEventListener('click', gameStart)
   resetBtn.addEventListener('click', reset)
   createGrid()
 }
