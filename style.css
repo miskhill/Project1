@@ -5,12 +5,18 @@
 header {
   display: flex;
   justify-content: center;
+  background-image: url("https://www.logolynx.com/images/logolynx/b4/b46625d4294945facd322124f4fb3814.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
 }
 
 h1 {
   display: flex;
-  color: brown;
+  visibility: hidden;
+  /* color: brown; */
   margin-bottom: 0;
+  /* background-image: url("https://www.logolynx.com/images/logolynx/b4/b46625d4294945facd322124f4fb3814.png"); */
 }
 
 body {
@@ -67,7 +73,6 @@ body {
   margin: 50px;
 }
 
-.fall {
-  animation-name: fall-animation;
-  animation-duration: 500ms;
+.reset {
+  background-image: url("http://i.ebayimg.com/images/g/trwAAOSwHLRfKGRh/s-l500.jpg");
 }
