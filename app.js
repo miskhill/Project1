@@ -5,6 +5,7 @@ function init() {
   const grid = document.querySelector('.grid')
   const yellow = document.querySelector('.yellow')
   const red = document.querySelector('.red')
+  const resetBtn = document.querySelector('.reset')
 
   //Variables to build the grid
   const width = 6
@@ -277,10 +278,15 @@ function init() {
       player = players[0]
     }
   }
+
+  function reset() {
+    location.reload()
+  }
   
 
   //Events
   grid.addEventListener('click', startGame)
+  resetBtn.addEventListener('click', reset)
   createGrid()
 }
 window.addEventListener('DOMContentLoaded', init) 
