@@ -227,7 +227,7 @@ function init() {
 
       index = nextChoice + width - 1
 
-      while (index % width !==0 && index <= width * height - 1 && checkPlayer2(index)) {
+      while (index % width !== 0 && index <= width * height - 1 && checkPlayer2(index)) {
         index -= (width + 1)
 
         if (player2Choice.length >= 4) {
@@ -235,6 +235,46 @@ function init() {
           console.log('Player 2 wins diagonal')
         }
       }
+
+      player2Choice = [nextChoice]
+
+      index = nextChoice - width - 1
+
+      while ((index + 1) % width !== 0 && index >= width && checkPlayer2(index)) {
+        index -= width - 1
+      }
+
+      index = nextChoice + width + 1
+
+      while (index & width !== 0 && index <= width * height - 1 && checkPlayer2(index)) {
+        index += width +1
+      }
+      if (player2Choice.length >= 4) {
+        playerTwoScore++
+        console.log('Player 2 wins diagonal')
+      }
+
+      player2Choice = [nextChoice]
+
+      index = nextChoice - width
+
+      while (index >= width && checkPlayer2(index)) {
+        index = nextChoice - width
+      }
+
+      index = nextChoice + width
+
+      while (index <= width * height - 1 && checkPlayer2(index)) {
+        index = index + width
+      }
+
+      if (player2Choice.length >= 4) {
+        playerTwoScore++
+        console.log('Player 2 wins column')
+      }
+
+      player2Choice = []
+      player = players[0]
     }
   }
   
