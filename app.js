@@ -115,21 +115,21 @@ function init() {
 
       //CHECK THE DIAGONAL GRID 36 -> 5// 
       player1Choice = [choice]
-
+      
       index = choice + width - 1
 
       //check dimensions of the grid created - while the index is in the dimension of the grid 
-      //in this case we need to check more than rows so width * height rather than just width
+      //in this case we need to check more than rows [0-5,6-11 etc] so width * height rather than just width
       while ((index + 1) % width !== 0 && index <= width * height - 1 && checkPlayer1(index)) {
-        //index + 5 will be the cell diagonally below the index chosen
+        //index + 5 will be the cell diagonally below the index chosen [16,21,26,31]
         index += (width - 1)
 
       }
-
+      // - 7 on the player choice
       index = choice - width + 1
-
+      //while these conditions are true keeping checking(size of grid and not 0 or 5)
       while (index % width !== width - 1 && index <= width * height - 1 && checkPlayer1(index)) { 
-        //index = index - 7 right to left cells which will give the cell diagonally above in the grid
+        //index = index - 7 right to left cells which will give the cell diagonally above in the grid [41,34,27,20]
         index -= (width + 1)
       }
       
@@ -192,12 +192,52 @@ function init() {
           console.log('player 1 score--->', playerOneScore)
         }
       }
+      player1Choice = []
+      player = players[1]
       
+    } else {
+
+      let nextChoice = Number(e.target.id) % width + 36
+
+      while (cells[nextChoice].classList.contains('yellow')|| cells[nextChoice].classList.contains('red')) {
+        nextChoice = nextChoice - width
+      }
+      cells[nextChoice].classList.add('red')
+
+      player2Choice = [nextChoice]
+
+      let index = nextChoice + 1
+
+      while (index % width !== 0 && checkPlayer2(index)) {
+        index++
+      }
+
+      index = nextChoice - 1
+
+      while (index % width !== width - 1 && checkPlayer2(index)) {
+        index--
+      }
+      if (player2Choice.length >= 4) {
+        playerTwoScore++
+        console.log('Player 2 wins across the board')
+      }
+
+      player2Choice = [nextChoice]
+
+
+      index = nextChoice + width - 1
+
+      while (index % width !==0 && index <= width * height - 1 && checkPlayer2(index)) {
+        index -= (width + 1)
+
+        if (player2Choice.length >= 4) {
+          playerTwoScore++
+          console.log('Player 2 wins diagonal')
+        }
+      }
     }
   }
   
-  
-
 
   //Events
   grid.addEventListener('click', startGame)
