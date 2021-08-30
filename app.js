@@ -7,7 +7,7 @@ function init() {
   const red = document.querySelector('.red')
   const resetBtn = document.querySelector('.reset')
 
-  //Variables to build the grid
+  //Variables to build the grid from lesson
   const width = 6
   const height = 7
   const cellCount = width * height
@@ -40,7 +40,6 @@ function init() {
       cells.push(cell)
     }
   }
-
 
   const checkPlayer1 = i => cells[i].classList.contains('yellow') ? player1Choice.push(i) : false
   const checkPlayer2 = i => cells[i].classList.contains('red') ? player2Choice.push(i) : false
@@ -151,7 +150,6 @@ function init() {
         
       player1Choice = [turn]
       
-      
       //BOTTOM INDEX OF THE GRID TO THE TOP//
       
       //start with the turn and take 6
@@ -206,7 +204,6 @@ function init() {
       }
 
       player2Choice = [nextTurn]
-
 
       i = nextTurn + width - 1
 
@@ -263,8 +260,6 @@ function init() {
 
   const reset = () => location.reload()
   
-  
-
   //Events
   grid.addEventListener('click', gameStart)
   resetBtn.addEventListener('click', reset)
