@@ -40,6 +40,8 @@ body {
 .grid-wrapper {
   display: flex;
   justify-content: center;
+  background-image: url("background3.png");
+  background-size: contain;
 }
 
 .grid div {
