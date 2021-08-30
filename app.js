@@ -51,21 +51,21 @@ function init() {
       //will just throw an undefined
       player1Choice.push(index)
       return true
-    } return false
+    } 
+    return false
   }
 
   function checkPlayer2(index) {
-    //if a cell has a red 
     if (cells[index].classList.contains('red')) {
-      //then push that to player 2 array so we know it has been taken and cannot be re-assigned 🔴
       player2Choice.push(index)
       return true
-    } return false
+    }
+    return false
   }
 
 
   // function for game start 😁
-  //use event handler as argument
+  //use event handler as argument - can't use a es6 function as it is not a short function
   function gameStart(e){
     
     if (player === players[0]) {
@@ -280,9 +280,8 @@ function init() {
     }
   }
 
-  function reset() {
-    location.reload()
-  }
+  const reset = () => location.reload()
+  
   
 
   //Events
