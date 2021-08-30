@@ -99,10 +99,15 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin: 50px;
+  margin-bottom: inherit;
+  margin-top: inherit;
 }
 
 .reset {
-  background-image: url("http://i.ebayimg.com/images/g/trwAAOSwHLRfKGRh/s-l500.jpg");
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #ffff0085;
 }
 
 footer {
