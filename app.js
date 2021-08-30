@@ -42,27 +42,8 @@ function init() {
   }
 
 
-
-
-  function checkPlayer1(index) {
-    //if an indexed cell has a yellow - found by checking the classlist value
-    if (cells[index].classList.contains('yellow')) {
-      //than push that to player 1 array so we know it is taken and cannot be re-assigned 🟡
-      //will just throw an undefined
-      player1Choice.push(index)
-      return true
-    } 
-    return false
-  }
-
-  function checkPlayer2(index) {
-    if (cells[index].classList.contains('red')) {
-      player2Choice.push(index)
-      return true
-    }
-    return false
-  }
-
+  const checkPlayer1 = index => cells[index].classList.contains('yellow') ? player1Choice.push(index) : false
+  const checkPlayer2 = index => cells[index].classList.contains('red') ? player2Choice.push(index) : false
 
   // function for game start 😁
   //use event handler as argument - can't use a es6 function as it is not a short function
