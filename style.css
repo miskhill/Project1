@@ -104,3 +104,15 @@ body {
 .reset {
   background-image: url("http://i.ebayimg.com/images/g/trwAAOSwHLRfKGRh/s-l500.jpg");
 }
+
+footer {
+  display: flex;
+  height: 10vh;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+  background-image: url("background3.png");
+}
+.github-logo {
+  height: 60px;
+}

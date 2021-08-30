@@ -126,6 +126,7 @@ function init() {
         console.log('winner winner chicken dinner 36-5 diagonal win 🟡')
         playerOneScore++
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+        endTurns()
 
       }
 
@@ -152,6 +153,7 @@ function init() {
         console.log('Top Left to Bottom Right winnnnner!! 🟡')
         playerOneScore++
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+        endTurns()
         
       }
         
@@ -178,6 +180,7 @@ function init() {
           playerOneScore++
           console.log('player 1 score--->', playerOneScore)
           p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          endTurns()
         }
       }
       player1Choice = []
@@ -210,6 +213,7 @@ function init() {
         console.log('Player 2 wins across the board 🔴')
         console.log('Player 2 score', playerTwoScore)
         p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        endTurns()
       }
 
       player2Choice = [nextTurn]
@@ -223,6 +227,7 @@ function init() {
           playerTwoScore++
           console.log('Player 2 wins diagonal 🔴')
           p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          endTurns()
         }
       }
 
@@ -243,6 +248,7 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins diagonal 🔴')
         p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        endTurns()
       }
 
       player2Choice = [nextTurn]
@@ -263,12 +269,13 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins column 🔴')
         p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        endTurns()
       }
 
       player2Choice = []
       player = players[0]
     }
-    // Function that hides the hoverable top row when player wins or looses so that they are forced to restart the game
+    // Function that clears the game when a player wins
     function endTurns() {
       const circlesChoice = document.querySelectorAll('.grid div')
       circlesChoice.forEach(circleChosen => circleChosen.style.visibility = 'hidden')
