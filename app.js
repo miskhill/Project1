@@ -94,6 +94,7 @@ function init() {
         console.log(playerOneScore) //this is just for my benefit while checking logic is working and can be removed later
         console.log('Show player1 turn',player1Choice) //just to check can be deleted later
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+        endTurns()
 
       }
 
@@ -266,6 +267,11 @@ function init() {
 
       player2Choice = []
       player = players[0]
+    }
+    // Function that hides the hoverable top row when player wins or looses so that they are forced to restart the game
+    function endTurns() {
+      const circlesChoice = document.querySelectorAll('.grid div')
+      circlesChoice.forEach(circleChosen => circleChosen.style.visibility = 'hidden')
     }
   }
 

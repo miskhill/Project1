@@ -74,6 +74,15 @@ body {
   outline: 5px solid black;
 }
 
+/* .grid.div.empty {
+} */
+
+/* .grid.div.checkPlayer1 .cell:hover {
+  background-color: #ffcccc;
+}
+.grid.div.checkPlayer2 :hover {
+  background-color: #ffffcc;    */
+
 .grid div:hover {
   background-color: blue;
 }
