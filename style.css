@@ -17,6 +17,11 @@ h1 {
   margin-bottom: 0;
 }
 
+#scoreboard {
+  display: flex;
+  height: 70px;
+}
+
 .win {
   display: flex;
   justify-content: space-evenly;
@@ -142,5 +147,13 @@ footer {
 @media only screen and (max-width: 600px) {
   .win {
     display: none;
+  }
+}
+
+@media (min-height: 500px) {
+  body {
+    height: 80vh;
+    overflow-y: auto;
+    position: relative;
   }
 }

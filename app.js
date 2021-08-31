@@ -321,3 +321,9 @@ function init() {
 }
 window.addEventListener('DOMContentLoaded', init) 
 
+
+//win banner potential function and variables
+//redwins.src = "img/redwins.png";
+//yellowwins.src = "img/yellowwins.png";
+//choose the correct picture for either red or yellow
+//const bannerImage = color == RED ? redwins : yellowwins;
