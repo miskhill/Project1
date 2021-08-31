@@ -11,6 +11,9 @@ function init() {
   //const playerDisk = ['.yellow', '.red']
   const spanP1Score = document.querySelector('#P1Score')
   const spanP2Score = document.querySelector('#P2Score')
+  //p1Win.src = '/Users/garysmith/development/Project/Images/player1 wins.png'
+  //p2Win.src = '/Users/garysmith/development/Project/Images/player2 wins.png'
+  //const bannerImage = player === players[0] ? p1Win : p2Win
   //Variables to build the grid from lesson
   const width = 6
   const height = 7
@@ -100,6 +103,7 @@ function init() {
         console.log('Show player1 turn',player1Choice) //just to check can be deleted later
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
         scorePlayer1()
+        //bannerImage()
         endTurns()
 
       }
@@ -317,13 +321,16 @@ function init() {
   //Events
   grid.addEventListener('click', gameStart)
   resetBtn.addEventListener('click', reset)
+  //P1.drawImage(bannerImage, bw / 6, -(bh / 6), bw / 1.5, bh / 6)
+  //P2.drawImage(bannerImage, bw / 6, -(bh / 6), bw / 1.5, bh / 6)
   createGrid()
 }
 window.addEventListener('DOMContentLoaded', init) 
 
 
 //win banner potential function and variables
-//redwins.src = "img/redwins.png";
-//yellowwins.src = "img/yellowwins.png";
+
 //choose the correct picture for either red or yellow
-//const bannerImage = color == RED ? redwins : yellowwins;
+
+ //draw that sucker
+

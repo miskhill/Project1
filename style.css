@@ -24,7 +24,7 @@ h1 {
 
 .win {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .P1 {
