@@ -37,7 +37,7 @@ function init() {
     //for loop i  0 --> final cell which is found by cellcount 
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.textContent = i
+      //cell.textContent = i
       //just text to see the i can remove later
       cell.id = i
       grid.appendChild(cell)

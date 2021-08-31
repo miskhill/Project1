@@ -134,8 +134,13 @@ footer {
   background-color: cornsilk;
 }
 
-@media screen and (max-height: 820px) {
-  h1 {
+/* @media screen and (max-height: 820px) and (max-width: 800px) {
+  .win {
     visibility: hidden;
+  }
+} */
+@media only screen and (max-width: 600px) {
+  .win {
+    display: none;
   }
 }
