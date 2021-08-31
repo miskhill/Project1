@@ -8,6 +8,9 @@ function init() {
   const resetBtn = document.querySelector('.reset')
   const p1Win = document.querySelector('.P1')
   const p2Win = document.querySelector('.P2')
+  //const playerDisk = ['.yellow', '.red']
+  const spanP1Score = document.querySelector('#P1Score')
+  const spanP2Score = document.querySelector('#P2Score')
   //Variables to build the grid from lesson
   const width = 6
   const height = 7
@@ -42,6 +45,7 @@ function init() {
     }
   }
 
+  //check which player is next
   const checkPlayer1 = i => cells[i].classList.contains('yellow') ? player1Choice.push(i) : false
   const checkPlayer2 = i => cells[i].classList.contains('red') ? player2Choice.push(i) : false
 
@@ -68,7 +72,8 @@ function init() {
       }
       
       //add a yellow piece as you are player 1 (rules of the game yellow goes first) - reference my CSS property here to pick the new background as the i is an id
-      cells[turn].classList.add('yellow')  
+      cells[turn].classList.add('yellow') 
+      //changeHover() 
       player1Choice = [turn]
   
       let i = turn + 1
@@ -94,6 +99,7 @@ function init() {
         console.log(playerOneScore) //this is just for my benefit while checking logic is working and can be removed later
         console.log('Show player1 turn',player1Choice) //just to check can be deleted later
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+        scorePlayer1()
         endTurns()
 
       }
@@ -126,6 +132,7 @@ function init() {
         console.log('winner winner chicken dinner 36-5 diagonal win 🟡')
         playerOneScore++
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+        scorePlayer1()
         endTurns()
 
       }
@@ -143,7 +150,7 @@ function init() {
       }
       //Whatever the turn we add 7 and we can check the grid diagonally below right 
       i = turn + width + 1
-      //While i is not equal to 0 and i is less than or equal to 41
+      //While i is not equal to 0 and i is less than or equal to 41 and a player is in the cell
       while (i % width !== 0 && i <= width * height - 1 && checkPlayer1(i)) { 
         //check the 7th cell below [1,8,15,21]
         i += width + 1
@@ -153,6 +160,7 @@ function init() {
         console.log('Top Left to Bottom Right winnnnner!! 🟡')
         playerOneScore++
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+        scorePlayer1()
         endTurns()
         
       }
@@ -180,6 +188,7 @@ function init() {
           playerOneScore++
           console.log('player 1 score--->', playerOneScore)
           p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          scorePlayer1()
           endTurns()
         }
       }
@@ -213,9 +222,10 @@ function init() {
         console.log('Player 2 wins across the board 🔴')
         console.log('Player 2 score', playerTwoScore)
         p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        scorePlayer2()
         endTurns()
       }
-
+      //diag //def missing a while statement here!
       player2Choice = [nextTurn]
 
       i = nextTurn + width - 1
@@ -227,6 +237,7 @@ function init() {
           playerTwoScore++
           console.log('Player 2 wins diagonal 🔴')
           p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          scorePlayer2()
           endTurns()
         }
       }
@@ -248,6 +259,7 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins diagonal 🔴')
         p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        scorePlayer2()
         endTurns()
       }
 
@@ -269,6 +281,7 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins column 🔴')
         p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        scorePlayer2()
         endTurns()
       }
 
@@ -278,15 +291,33 @@ function init() {
     // Function that clears the game when a player wins
     function endTurns() {
       const circlesChoice = document.querySelectorAll('.grid div')
-      circlesChoice.forEach(circleChosen => circleChosen.style.visibility = 'hidden')
+      circlesChoice.forEach(circleChosen => circleChosen.classList.remove('red', 'yellow'))
     }
   }
-
+  //reset completely
   const reset = () => location.reload()
+
+  // function changeHover() {
+  //   //once disk fell - put the disk to place
+  //   grid.addClass('red')
+  // }
   
+  // Function that increases player1 score
+  function scorePlayer1() {
+    playerOneScore =  playerOneScore 
+    spanP1Score.innerHTML = playerOneScore
+  }
+
+  // Function that increases player2 score
+  function scorePlayer2() {
+    playerTwoScore = playerTwoScore 
+    spanP2Score.innerHTML = playerTwoScore
+  }
+
   //Events
   grid.addEventListener('click', gameStart)
   resetBtn.addEventListener('click', reset)
   createGrid()
 }
 window.addEventListener('DOMContentLoaded', init) 
+

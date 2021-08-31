@@ -14,9 +14,7 @@ header {
 h1 {
   display: flex;
   visibility: hidden;
-  /* color: brown; */
   margin-bottom: 0;
-  /* background-image: url("https://www.logolynx.com/images/logolynx/b4/b46625d4294945facd322124f4fb3814.png"); */
 }
 
 .win {
@@ -28,12 +26,14 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 200px;
 }
 
 .P2 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-left: 200px;
 }
 
 body {
@@ -74,18 +74,26 @@ body {
   outline: 5px solid black;
 }
 
+body.yellow .grid div:hover {
+  /* add a class to the body then select in here body.yellow grid div hover */
+  background-color: yellow;
+}
+
+body.red .grid div:hover {
+  background-color: red;
+}
 /* .grid.div.empty {
 } */
 
-/* .grid.div.checkPlayer1 .cell:hover {
+/* .grid.div.players .cell:hover {
   background-color: #ffcccc;
 }
-.grid.div.checkPlayer2 :hover {
+.grid.div.players :hover {
   background-color: #ffffcc;    */
 
-.grid div:hover {
+/* .grid div:hover {
   background-color: blue;
-}
+} */
 
 .grid div.red {
   background-color: red;
@@ -120,4 +128,8 @@ footer {
 }
 .github-logo {
   height: 60px;
+}
+
+#div-20 {
+  background-color: cornsilk;
 }
