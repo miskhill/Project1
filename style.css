@@ -133,3 +133,9 @@ footer {
 #div-20 {
   background-color: cornsilk;
 }
+
+@media screen and (max-height: 820px) {
+  h1 {
+    visibility: hidden;
+  }
+}
