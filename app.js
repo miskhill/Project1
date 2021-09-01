@@ -8,6 +8,8 @@ function init() {
   const p2Win = document.querySelector('.P2')
   const spanP1Score = document.querySelector('#P1Score')
   const spanP2Score = document.querySelector('#P2Score')
+  const body = document.getElementsByClassName('yellow')
+  //const newBody = document.getElementsByClassName('red').classList.toggle('yellow')
  
   //Variables to build the grid from lesson
   const width = 6
@@ -71,7 +73,8 @@ function init() {
       
       //add a yellow piece as you are player 1 (rules of the game yellow goes first) - reference my CSS property here to pick the new background as the i is an id
       cells[turn].classList.add('yellow') 
-      //changeHover() 
+      //changeClass()
+      
       player1Choice = [turn]
   
       let i = turn + 1
@@ -96,9 +99,9 @@ function init() {
         playerOneScore++
         console.log(playerOneScore) //this is just for my benefit while checking logic is working and can be removed later
         console.log('Show player1 turn',player1Choice) //just to check can be deleted later
-        
+        p1Win.innerHTML = 'Player 1 Wins!! 🟡'
         setTimeout(() => {
-          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          p1Win.innerHTML = ''
           scorePlayer1()
           endTurns()
         }, 1000)
@@ -132,8 +135,9 @@ function init() {
       if (player1Choice.length >= 4) {
         console.log('winner winner chicken dinner 36-5 diagonal win 🟡')
         playerOneScore++
+        p1Win.innerHTML = 'Player 1 Wins!! 🟡'
         setTimeout(() => {
-          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          p1Win.innerHTML = ''
           scorePlayer1()
           endTurns()
         }, 1000)
@@ -162,8 +166,9 @@ function init() {
       if (player1Choice.length >= 4) {
         console.log('Top Left to Bottom Right winnnnner!! 🟡')
         playerOneScore++
+        p1Win.innerHTML = 'Player 1 Wins!! 🟡'
         setTimeout(() => {
-          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          p1Win.innerHTML = ''
           scorePlayer1()
           endTurns()
         }, 1000)
@@ -192,8 +197,9 @@ function init() {
           console.log('up up down down win 🟡')
           playerOneScore++
           console.log('player 1 score--->', playerOneScore)
+          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
           setTimeout(() => {
-            p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+            p1Win.innerHTML = ''
             scorePlayer1()
             endTurns()
           }, 1000)
@@ -210,6 +216,7 @@ function init() {
         nextTurn = nextTurn - width
       }
       cells[nextTurn].classList.add('red')
+      //changeClass()
 
       player2Choice = [nextTurn]
 
@@ -228,8 +235,9 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins across the board 🔴')
         console.log('Player 2 score', playerTwoScore)
+        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
         setTimeout(() => {
-          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          p2Win.innerHTML = ''
           scorePlayer2()
           endTurns()
         }, 1000)
@@ -245,8 +253,9 @@ function init() {
         if (player2Choice.length >= 4) {
           playerTwoScore++
           console.log('Player 2 wins diagonal 🔴')
+          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
           setTimeout(() => {
-            p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+            p2Win.innerHTML = ''
             scorePlayer2()
             endTurns()
           }, 1000)
@@ -269,8 +278,9 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins diagonal 🔴')
+        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
         setTimeout(() => {
-          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          p2Win.innerHTML = ''
           scorePlayer2()
           endTurns()
         }, 1000)
@@ -293,8 +303,9 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins column 🔴')
+        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
         setTimeout(() => {
-          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          p2Win.innerHTML = ''
           scorePlayer2()
           endTurns()
         }, 1000)
@@ -312,6 +323,10 @@ function init() {
   //reset completely
   const reset = () => location.reload()
 
+  // function changeClass () {
+  //   const body = document.getElementsByClassName('yellow')
+  //   body.className = 'red'
+  // }
   // function changeHover() {
   //   //once disk fell - put the disk to place
   //   grid.addClass('red')
@@ -319,13 +334,11 @@ function init() {
   
   // Function that increases player1 score
   function scorePlayer1() {
-    //playerOneScore =  playerOneScore 
     spanP1Score.innerHTML = playerOneScore
   }
 
   // Function that increases player2 score
   function scorePlayer2() {
-    //playerTwoScore = playerTwoScore 
     spanP2Score.innerHTML = playerTwoScore
   }
 

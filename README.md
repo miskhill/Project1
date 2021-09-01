@@ -62,4 +62,4 @@ The winner is the first to create a line of four in any direction, including dia
 
 ## [](https://miskhill.github.io/Project1/#author)Author
 
-Gary Smith# Project1
+Gary Smith

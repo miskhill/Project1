@@ -56,11 +56,13 @@ h1 {
 
 .P1 {
   display: flex;
+  font-size: 25px;
 }
 
 .P2 {
   display: flex;
   margin-left: 750px;
+  font-size: 25px;
 }
 
 body {
