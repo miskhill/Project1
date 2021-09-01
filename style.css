@@ -21,7 +21,10 @@ h1 {
 #scoreboard {
   display: flex;
   height: 70px;
-  margin-left: 7em;
+}
+
+.winmessage {
+  display: flex;
 }
 
 #P1Score {
@@ -40,17 +43,12 @@ h1 {
 
 .P1 {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 6em;
 }
 
-/* .P2 {
+.P2 {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-left: 200px;
-} */
+  margin-left: 750px;
+}
 
 body {
   /* display: flex;
@@ -159,6 +157,10 @@ footer {
 .github-logo {
   height: 60px;
 }
+
+/* .linkedIn-logo {
+  height: 60px;
+} */
 
 #div-20 {
   background-color: cornsilk;

@@ -225,7 +225,7 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins across the board 🔴')
         console.log('Player 2 score', playerTwoScore)
-        p1Win.innerHTML = 'Player 2 Wins!! 🔴'
+        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
         scorePlayer2()
         endTurns()
       }
@@ -240,7 +240,7 @@ function init() {
         if (player2Choice.length >= 4) {
           playerTwoScore++
           console.log('Player 2 wins diagonal 🔴')
-          p1Win.innerHTML = 'Player 2 Wins!! 🔴'
+          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
           scorePlayer2()
           endTurns()
         }
@@ -262,7 +262,7 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins diagonal 🔴')
-        p1Win.innerHTML = 'Player 2 Wins!! 🔴'
+        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
         scorePlayer2()
         endTurns()
       }
@@ -284,7 +284,7 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins column 🔴')
-        p1Win.innerHTML = 'Player 2 Wins!! 🔴'
+        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
         scorePlayer2()
         endTurns()
       }
