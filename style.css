@@ -12,7 +12,6 @@
   }
 }
 
-/* ...and then apply it: */
 header {
   animation: slide-in 1000ms;
 }
