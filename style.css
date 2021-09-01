@@ -3,6 +3,20 @@
   font-family: "Aubrey", cursive;
 }
 
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* ...and then apply it: */
+header {
+  animation: slide-in 1000ms;
+}
+
 header {
   display: flex;
   justify-content: center;
