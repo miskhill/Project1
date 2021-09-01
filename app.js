@@ -7,7 +7,7 @@ function init() {
   // const red = document.querySelector('.red')
   const resetBtn = document.querySelector('.reset')
   const p1Win = document.querySelector('.P1')
-  
+  const p2Win = document.querySelector('.P2')
   //const playerDisk = ['.yellow', '.red']
   const spanP1Score = document.querySelector('#P1Score')
   const spanP2Score = document.querySelector('#P2Score')
@@ -308,14 +308,13 @@ function init() {
   
   // Function that increases player1 score
   function scorePlayer1() {
-    playerOneScore =  playerOneScore 
+    //playerOneScore =  playerOneScore 
     spanP1Score.innerHTML = playerOneScore
   }
 
   // Function that increases player2 score
   function scorePlayer2() {
-    playerTwoScore = playerTwoScore 
-    sp
+    //playerTwoScore = playerTwoScore 
     spanP2Score.innerHTML = playerTwoScore
   }
 
