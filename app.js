@@ -7,7 +7,7 @@ function init() {
   // const red = document.querySelector('.red')
   const resetBtn = document.querySelector('.reset')
   const p1Win = document.querySelector('.P1')
-  const p2Win = document.querySelector('.P2')
+  
   //const playerDisk = ['.yellow', '.red']
   const spanP1Score = document.querySelector('#P1Score')
   const spanP2Score = document.querySelector('#P2Score')
@@ -225,7 +225,7 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins across the board 🔴')
         console.log('Player 2 score', playerTwoScore)
-        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        p1Win.innerHTML = 'Player 2 Wins!! 🔴'
         scorePlayer2()
         endTurns()
       }
@@ -240,7 +240,7 @@ function init() {
         if (player2Choice.length >= 4) {
           playerTwoScore++
           console.log('Player 2 wins diagonal 🔴')
-          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          p1Win.innerHTML = 'Player 2 Wins!! 🔴'
           scorePlayer2()
           endTurns()
         }
@@ -262,7 +262,7 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins diagonal 🔴')
-        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        p1Win.innerHTML = 'Player 2 Wins!! 🔴'
         scorePlayer2()
         endTurns()
       }
@@ -284,7 +284,7 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins column 🔴')
-        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        p1Win.innerHTML = 'Player 2 Wins!! 🔴'
         scorePlayer2()
         endTurns()
       }
@@ -315,6 +315,7 @@ function init() {
   // Function that increases player2 score
   function scorePlayer2() {
     playerTwoScore = playerTwoScore 
+    sp
     spanP2Score.innerHTML = playerTwoScore
   }
 
