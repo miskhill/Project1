@@ -101,11 +101,13 @@ function init() {
         playerOneScore++
         console.log(playerOneScore) //this is just for my benefit while checking logic is working and can be removed later
         console.log('Show player1 turn',player1Choice) //just to check can be deleted later
-        p1Win.innerHTML = 'Player 1 Wins!! 🟡'
-        scorePlayer1()
-        //bannerImage()
-        endTurns()
-
+        
+        setTimeout(() => {
+          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          scorePlayer1()
+          endTurns()
+        }, 2000)
+        
       }
 
       //CHECK THE DIAGONAL GRID 36 -> 5// 
@@ -135,9 +137,11 @@ function init() {
       if (player1Choice.length >= 4) {
         console.log('winner winner chicken dinner 36-5 diagonal win 🟡')
         playerOneScore++
-        p1Win.innerHTML = 'Player 1 Wins!! 🟡'
-        scorePlayer1()
-        endTurns()
+        setTimeout(() => {
+          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          scorePlayer1()
+          endTurns()
+        }, 2000)
 
       }
 
@@ -163,9 +167,11 @@ function init() {
       if (player1Choice.length >= 4) {
         console.log('Top Left to Bottom Right winnnnner!! 🟡')
         playerOneScore++
-        p1Win.innerHTML = 'Player 1 Wins!! 🟡'
-        scorePlayer1()
-        endTurns()
+        setTimeout(() => {
+          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+          scorePlayer1()
+          endTurns()
+        }, 2000)
         
       }
         
@@ -191,9 +197,11 @@ function init() {
           console.log('up up down down win 🟡')
           playerOneScore++
           console.log('player 1 score--->', playerOneScore)
-          p1Win.innerHTML = 'Player 1 Wins!! 🟡'
-          scorePlayer1()
-          endTurns()
+          setTimeout(() => {
+            p1Win.innerHTML = 'Player 1 Wins!! 🟡'
+            scorePlayer1()
+            endTurns()
+          }, 2000)
         }
       }
       player1Choice = []
@@ -225,9 +233,11 @@ function init() {
         playerTwoScore++
         console.log('Player 2 wins across the board 🔴')
         console.log('Player 2 score', playerTwoScore)
-        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
-        scorePlayer2()
-        endTurns()
+        setTimeout(() => {
+          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          scorePlayer2()
+          endTurns()
+        }, 2000)
       }
       //diag //def missing a while statement here!
       player2Choice = [nextTurn]
@@ -240,9 +250,11 @@ function init() {
         if (player2Choice.length >= 4) {
           playerTwoScore++
           console.log('Player 2 wins diagonal 🔴')
-          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
-          scorePlayer2()
-          endTurns()
+          setTimeout(() => {
+            p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+            scorePlayer2()
+            endTurns()
+          }, 2000)
         }
       }
 
@@ -262,9 +274,11 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins diagonal 🔴')
-        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
-        scorePlayer2()
-        endTurns()
+        setTimeout(() => {
+          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          scorePlayer2()
+          endTurns()
+        }, 2000)
       }
 
       player2Choice = [nextTurn]
@@ -284,9 +298,11 @@ function init() {
       if (player2Choice.length >= 4) {
         playerTwoScore++
         console.log('Player 2 wins column 🔴')
-        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
-        scorePlayer2()
-        endTurns()
+        setTimeout(() => {
+          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+          scorePlayer2()
+          endTurns()
+        }, 2000)
       }
 
       player2Choice = []
