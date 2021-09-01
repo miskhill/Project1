@@ -3,17 +3,12 @@ function init() {
   //Elements
 
   const grid = document.querySelector('.grid')
-  // const yellow = document.querySelector('.yellow')
-  // const red = document.querySelector('.red')
   const resetBtn = document.querySelector('.reset')
   const p1Win = document.querySelector('.P1')
   const p2Win = document.querySelector('.P2')
-  //const playerDisk = ['.yellow', '.red']
   const spanP1Score = document.querySelector('#P1Score')
   const spanP2Score = document.querySelector('#P2Score')
-  //p1Win.src = '/Users/garysmith/development/Project/Images/player1 wins.png'
-  //p2Win.src = '/Users/garysmith/development/Project/Images/player2 wins.png'
-  //const bannerImage = player === players[0] ? p1Win : p2Win
+ 
   //Variables to build the grid from lesson
   const width = 6
   const height = 7
@@ -106,7 +101,7 @@ function init() {
           p1Win.innerHTML = 'Player 1 Wins!! 🟡'
           scorePlayer1()
           endTurns()
-        }, 2000)
+        }, 1000)
         
       }
 
@@ -141,7 +136,7 @@ function init() {
           p1Win.innerHTML = 'Player 1 Wins!! 🟡'
           scorePlayer1()
           endTurns()
-        }, 2000)
+        }, 1000)
 
       }
 
@@ -171,7 +166,7 @@ function init() {
           p1Win.innerHTML = 'Player 1 Wins!! 🟡'
           scorePlayer1()
           endTurns()
-        }, 2000)
+        }, 1000)
         
       }
         
@@ -201,7 +196,7 @@ function init() {
             p1Win.innerHTML = 'Player 1 Wins!! 🟡'
             scorePlayer1()
             endTurns()
-          }, 2000)
+          }, 1000)
         }
       }
       player1Choice = []
@@ -237,7 +232,7 @@ function init() {
           p2Win.innerHTML = 'Player 2 Wins!! 🔴'
           scorePlayer2()
           endTurns()
-        }, 2000)
+        }, 1000)
       }
       //diag //def missing a while statement here!
       player2Choice = [nextTurn]
@@ -254,7 +249,7 @@ function init() {
             p2Win.innerHTML = 'Player 2 Wins!! 🔴'
             scorePlayer2()
             endTurns()
-          }, 2000)
+          }, 1000)
         }
       }
 
@@ -278,7 +273,7 @@ function init() {
           p2Win.innerHTML = 'Player 2 Wins!! 🔴'
           scorePlayer2()
           endTurns()
-        }, 2000)
+        }, 1000)
       }
 
       player2Choice = [nextTurn]
@@ -302,7 +297,7 @@ function init() {
           p2Win.innerHTML = 'Player 2 Wins!! 🔴'
           scorePlayer2()
           endTurns()
-        }, 2000)
+        }, 1000)
       }
 
       player2Choice = []
@@ -337,16 +332,8 @@ function init() {
   //Events
   grid.addEventListener('click', gameStart)
   resetBtn.addEventListener('click', reset)
-  //P1.drawImage(bannerImage, bw / 6, -(bh / 6), bw / 1.5, bh / 6)
-  //P2.drawImage(bannerImage, bw / 6, -(bh / 6), bw / 1.5, bh / 6)
   createGrid()
 }
 window.addEventListener('DOMContentLoaded', init) 
 
-
-//win banner potential function and variables
-
-//choose the correct picture for either red or yellow
-
- //draw that sucker
 
