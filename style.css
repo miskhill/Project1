@@ -125,18 +125,32 @@ body.red .grid div:hover {
   margin: 50px;
   margin-bottom: inherit;
   margin-top: inherit;
+  height: 5px;
+  /* background-image: url("coins.webp"); */
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.reset {
+  animation: bounce 300ms alternate infinite cubic-bezier(0.2, 0.65, 0.6, 1);
 }
 
 .reset {
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-color: #ffff0085;
+  background-color: yellow;
 }
 
 footer {
   display: flex;
-  height: 10vh;
   justify-content: flex-end;
   align-items: center;
   padding-right: 30px;
