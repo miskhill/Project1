@@ -191,7 +191,6 @@ function init() {
         }
       }
       player1Choice = []
-      toggleHover()
       player = players[1]
       
     } else {
@@ -229,25 +228,38 @@ function init() {
           endTurns()
         }, 1000)
       }
-      //diag //def missing a while statement here!
+      //Diagonal checks for player 2
       player2Choice = [nextTurn]
 
       i = nextTurn + width - 1
 
+      while ((i + 1) % width !== 0 && i <= width * height - 1 && checkPlayer2(i)) {
+        //i + 5 will be the cell diagonally below the i chosen [16,21,26,31]
+        i += (width - 1)
+
+      }
+      // - 7 on the player turn
+      i = nextTurn - width + 1
+
       while (i % width !== 0 && i <= width * height - 1 && checkPlayer2(i)) {
         i -= (width + 1)
-
-        if (player2Choice.length >= 4) {
-          playerTwoScore++
-          console.log('Player 2 wins diagonal 🔴')
-          p2Win.innerHTML = 'Player 2 Wins!! 🔴'
-          setTimeout(() => {
-            p2Win.innerHTML = ''
-            scorePlayer2()
-            endTurns()
-          }, 1000)
-        }
       }
+
+      while (nextTurn > 5 && checkPlayer2(i)) {
+        player2Choice = [nextTurn]
+      }
+
+      if (player2Choice.length >= 4) {
+        playerTwoScore++
+        console.log('Player 2 wins diagonal 🔴')
+        p2Win.innerHTML = 'Player 2 Wins!! 🔴'
+        setTimeout(() => {
+          p2Win.innerHTML = ''
+          scorePlayer2()
+          endTurns()
+        }, 1000)
+      }
+      
 
       player2Choice = [nextTurn]
 
@@ -331,19 +343,6 @@ function init() {
   function scorePlayer2() {
     spanP2Score.innerHTML = playerTwoScore
   }
-
-  // Functions that clears the instructions screen
-  //function clearInstructions() {
-  //onePlayer.style.display = 'none'
-  //twoPlayer.style.display = 'none'
-  //instructions.forEach(instruction => instruction.style.display = 'none')
-  //scoreBoard.style.visibility = 'visible'
-  //resetButton.style.visibility = 'visible'
-  //resetButtonTwo.style.visibility = 'visible'
-  //const sound = document.querySelector('audio')
-  //sound.play()
-  //createGrid()
-  //}
 
   //Events
   grid.addEventListener('click', gameStart)
