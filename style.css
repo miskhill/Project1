@@ -171,3 +171,16 @@ footer {
     position: relative;
   }
 }
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @media {
+    .safari10 {
+    }
+    .coin {
+      width: 10%;
+    }
+    #scoreboard {
+      justify-content: center;
+    }
+  }
+}
