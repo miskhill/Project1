@@ -8,7 +8,8 @@ function init() {
   const p2Win = document.querySelector('.P2')
   const spanP1Score = document.querySelector('#P1Score')
   const spanP2Score = document.querySelector('#P2Score')
-  const body = document.getElementsByClassName('yellow')
+  //const body = document.querySelector('.hover')
+  //const red = document.getElementsByClassName('red')
   //const newBody = document.getElementsByClassName('red').classList.toggle('yellow')
  
   //Variables to build the grid from lesson
@@ -73,6 +74,8 @@ function init() {
       
       //add a yellow piece as you are player 1 (rules of the game yellow goes first) - reference my CSS property here to pick the new background as the i is an id
       cells[turn].classList.add('yellow') 
+      toggleHover()
+      //body.classList.add(red) //undefined error
       //changeClass()
       
       player1Choice = [turn]
@@ -145,7 +148,6 @@ function init() {
       }
 
       player1Choice = [turn]
-
       //  Check the grid from 0 --> 41 top left to bottom right
       // Whatever the i turn is take 7 which brings you to the cell directly above diagonally from the i
       i = turn - width - 1
@@ -206,6 +208,7 @@ function init() {
         }
       }
       player1Choice = []
+      toggleHover()
       player = players[1]
       
     } else {
@@ -215,8 +218,9 @@ function init() {
       while (cells[nextTurn].classList.contains('yellow') || cells[nextTurn].classList.contains('red')) {
         nextTurn = nextTurn - width
       }
+      
       cells[nextTurn].classList.add('red')
-      //changeClass()
+      nextToggle()
 
       player2Choice = [nextTurn]
 
@@ -318,6 +322,18 @@ function init() {
     function endTurns() {
       const circlesChoice = document.querySelectorAll('.grid div')
       circlesChoice.forEach(circleChosen => circleChosen.classList.remove('red', 'yellow'))
+    }
+
+    function toggleHover() {
+      const hover = document.querySelectorAll('.hover')
+      hover.forEach(element => element.classList.remove('hover'))
+      hover.forEach(element => element.classList.add('hover2'))
+    }
+
+    function nextToggle() {
+      const hover2 = document.querySelectorAll('.hover2')
+      hover2.forEach(element => element.classList.remove('hover2'))
+      hover2.forEach(element => element.classList.add('hover'))
     }
   }
   //reset completely

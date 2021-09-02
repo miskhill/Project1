@@ -103,14 +103,15 @@ body {
   outline: 5px solid black;
 }
 
-body.yellow .grid div:hover {
+body.hover .grid div:hover {
   /* add a class to the body then select in here body.yellow grid div hover */
   background-color: yellow;
 }
 
-body.red .grid div:hover {
+body.hover2 .grid div:hover {
   background-color: red;
 }
+
 /* .grid.div.empty {
 } */
 
