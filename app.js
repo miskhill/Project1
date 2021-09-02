@@ -8,10 +8,6 @@ function init() {
   const p2Win = document.querySelector('.P2')
   const spanP1Score = document.querySelector('#P1Score')
   const spanP2Score = document.querySelector('#P2Score')
-  //const body = document.querySelector('.hover')
-  //const red = document.getElementsByClassName('red')
-  //const newBody = document.getElementsByClassName('red').classList.toggle('yellow')
- 
   //Variables to build the grid from lesson
   const width = 6
   const height = 7
@@ -38,8 +34,6 @@ function init() {
     //for loop i  0 --> final cell which is found by cellcount 
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      //cell.textContent = i
-      //just text to see the i can remove later
       cell.id = i
       grid.appendChild(cell)
       cells.push(cell)
@@ -56,27 +50,17 @@ function init() {
     
     if (player === players[0]) {
 
-      // i will need to be a number or else it is a string
-      // turn needs to be an element in the grid chosen with the id which was given in the createGrid function
-      // turn is worked out by using the modulus of width and then adding 36 to ensure we are on the bottom row of the cells/grid so 
-      // turn = grid number 41 = 6.8 + 36 = 42
-      // turn = grid number 36 = 6 (remainder of 0) + 36 = i 0
-      //turn = grid number 37 = 37/6 = 6.1 (remainder of 1) = 37
-      //turn = grid number 38 = 38/6 = 6.3 (third position)
       let turn = Number(e.target.id) % width + 36 //without the modulus we get undefined and can only select one grid - this gives you the bottom row to start
       console.log('turn mod --->',cells[turn] % 6 )  //expected return NaN then the i
 
       while (cells[turn].classList.contains('yellow') || (cells[turn].classList.contains('red'))) {
         //the cell above must be chosen if there is already a 🟡 or 🔴 piece there and I can find this by subtracting the width
         turn = turn - width
-        console.log('turn---->', turn) //console log to show that the turn is the correct i
       }
       
       //add a yellow piece as you are player 1 (rules of the game yellow goes first) - reference my CSS property here to pick the new background as the i is an id
       cells[turn].classList.add('yellow') 
       toggleHover()
-      //body.classList.add(red) //undefined error
-      //changeClass()
       
       player1Choice = [turn]
   
@@ -101,7 +85,6 @@ function init() {
         console.log('You won across the grid!! 🟡') 
         playerOneScore++
         console.log(playerOneScore) //this is just for my benefit while checking logic is working and can be removed later
-        console.log('Show player1 turn',player1Choice) //just to check can be deleted later
         p1Win.innerHTML = 'Player 1 Wins!! 🟡'
         setTimeout(() => {
           p1Win.innerHTML = ''
@@ -323,13 +306,13 @@ function init() {
       const circlesChoice = document.querySelectorAll('.grid div')
       circlesChoice.forEach(circleChosen => circleChosen.classList.remove('red', 'yellow'))
     }
-
+    //Function to change the hover from player 1 to player 2 colour
     function toggleHover() {
       const hover = document.querySelectorAll('.hover')
       hover.forEach(element => element.classList.remove('hover'))
       hover.forEach(element => element.classList.add('hover2'))
     }
-
+    //Function to change the hover from player 2 to player 1 colour
     function nextToggle() {
       const hover2 = document.querySelectorAll('.hover2')
       hover2.forEach(element => element.classList.remove('hover2'))
@@ -338,15 +321,6 @@ function init() {
   }
   //reset completely
   const reset = () => location.reload()
-
-  // function changeClass () {
-  //   const body = document.getElementsByClassName('yellow')
-  //   body.className = 'red'
-  // }
-  // function changeHover() {
-  //   //once disk fell - put the disk to place
-  //   grid.addClass('red')
-  // }
   
   // Function that increases player1 score
   function scorePlayer1() {
@@ -357,6 +331,19 @@ function init() {
   function scorePlayer2() {
     spanP2Score.innerHTML = playerTwoScore
   }
+
+  // Functions that clears the instructions screen
+  //function clearInstructions() {
+  //onePlayer.style.display = 'none'
+  //twoPlayer.style.display = 'none'
+  //instructions.forEach(instruction => instruction.style.display = 'none')
+  //scoreBoard.style.visibility = 'visible'
+  //resetButton.style.visibility = 'visible'
+  //resetButtonTwo.style.visibility = 'visible'
+  //const sound = document.querySelector('audio')
+  //sound.play()
+  //createGrid()
+  //}
 
   //Events
   grid.addEventListener('click', gameStart)
