@@ -113,6 +113,21 @@ body.hover2 .grid div:hover {
   background-color: yellow;
 }
 
+/* body.yellow-circles .grid div{
+  background-color: yellow;
+  animation: pulse 2s infinite ease;
+}
+
+body.red-circles .grid div{
+  background-color: red;
+  animation: pulse 2s infinite ease;
+
+@keyframes pulse {
+  0% {box-shadow: 0 0 0 0px rgba(225, 225, 225, 0);}
+  50% {box-shadow: 0 0 3rem 0 rgba(255, 255, 255, 1);}
+  100% {box-shadow: 0 0 0 0px rgba(225, 225, 225, 0);}
+} */
+
 .Buttons {
   display: flex;
   justify-content: space-evenly;
