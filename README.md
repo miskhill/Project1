@@ -1,6 +1,7 @@
 # Project 1 - Connect 4 game!
 
 This was my first solo project on the General Assembly Software Engineering Immersive course (Week 4).
+I was given a 7 day timeframe.
 
 # Images
 
