@@ -98,7 +98,7 @@ The winner is the first to create a line of four in any direction, including dia
 
   
 
-- utilising while loops to check the areas on the grid there might be player moves.
+- Utilising while loops to check the areas on the grid there might be player moves.
 
   
   
